@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import ovp.backend.persistence.dao.UserDAO;
@@ -14,6 +15,7 @@ public class UserDAOImpl implements UserDAO {
 
 	static Session sessionObj;
 
+	@Autowired
 	private SessionFactory sessionFactory;
 
 	public void setSessionFactory(SessionFactory sessionFactory) {
@@ -119,7 +121,7 @@ public class UserDAOImpl implements UserDAO {
 		}
 	}
 
-	public User loginCheck(String userName, String password, int userTypeId) {
+	public User loginCheck(String userName, String password) {
 		User userObj = null;
 		try {
 			System.out.println("finding user");
@@ -187,8 +189,8 @@ public class UserDAOImpl implements UserDAO {
 		return usersList;
 	}
 	
-	public void updatePassword(String userName, String oldPassword, String newPassword, int userTypeId) {
-		User check = loginCheck(userName, oldPassword, userTypeId);
+	public void updatePassword(String userName, String oldPassword, String newPassword) {
+		User check = loginCheck(userName, oldPassword);
 		//System.out.println("check password: " + check.getPassword() + " \nold password: " + oldPassword);
 		
 		try {

@@ -1,6 +1,5 @@
 package ovp.backend.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.DELETE;
@@ -16,8 +15,8 @@ import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import ovp.backend.persistence.dao.UserDAO;
-import ovp.backend.persistence.dao.UserTypeDAO;
+import ovp.backend.business.UserManager;
+import ovp.backend.business.UserTypeManager;
 import ovp.backend.persistence.model.User;
 import ovp.backend.persistence.model.UserType;
 import ovp.common.resources.dto.UserDTO;
@@ -25,25 +24,16 @@ import ovp.common.resources.dto.UserTypeDTO;
 
 @Path("/users")
 public class UserController {
-	ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-
-	UserDAO userDAO = context.getBean(UserDAO.class);
-	UserTypeDAO userTypeDAO = context.getBean(UserTypeDAO.class);
-
+	ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-dto.xml");
+	
+	UserManager userManager = context.getBean(UserManager.class);
+	UserTypeManager userTypeManager = context.getBean(UserTypeManager.class);
+	
 	@GET
 	@Path("/types")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<UserTypeDTO> getTypes() {
-		
-		List<UserType> userType = userTypeDAO.displayUserTypes();
-		List<UserTypeDTO> userTypeDTO = new ArrayList<UserTypeDTO>();
-		
-		for(UserType ut : userType) {
-			UserTypeDTO utd = new UserTypeDTO(ut.getId(), ut.getUserType());
-			userTypeDTO.add(utd);
-		}
-		
-		return userTypeDTO;
+		return userTypeManager.displayUserTypes();
 	}
 
 	@POST
@@ -61,38 +51,24 @@ public class UserController {
 			type.setId(id);
 			type.setUserType(userType);
 
-			userTypeDAO.createUserType(type);
+			userTypeManager.createUserType(type);
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<UserDTO> getUsers() {
-		
-		List<User> usersList = userDAO.displayUsers();
-		List<UserDTO> usersDTOList = new ArrayList<UserDTO>();
-		for (User u : usersList) {
-			UserDTO userDTO = new UserDTO(u.getEmail(), u.getUserName(), u.getUserTypeId());
-			usersDTOList.add(userDTO);
-		}
-
-		return usersDTOList;
+		return userManager.displayUsers();
 	}
 
 	@GET
 	@Path("/{userName}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public UserDTO findUser(@PathParam("userName") String userName) {
-		
-		User user = userDAO.findUserByUserName(userName);
-		
-		UserDTO userDTO = new UserDTO(user.getEmail(), user.getUserName(), user.getUserTypeId());
-		
-		return userDTO;
+		return userManager.findUserByUserName(userName);
 	}
 
 	@POST
@@ -113,7 +89,7 @@ public class UserController {
 			user.setPassword(password);
 			user.setUserTypeId(userTypeId);
 
-			userDAO.createUser(user);
+			userManager.createUser(user);
 
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
@@ -131,9 +107,8 @@ public class UserController {
 			String userName = jsonObj.getString("userName");
 			String oldPassword = jsonObj.getString("oldPassword");
 			String newPassword = jsonObj.getString("newPassword");
-			int userTypeId = jsonObj.getInt("userTypeId");
 
-			userDAO.updatePassword(userName, oldPassword, newPassword, userTypeId);
+			userManager.updatePassword(userName, oldPassword, newPassword);
 
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
@@ -144,21 +119,20 @@ public class UserController {
 	@DELETE
 	@Path("/{userName}")
 	public void deleteUser(@PathParam("userName") String userName) {
-		userDAO.deleteUser(userName);
+		userManager.deleteUser(userName);
 	}
 
 	@POST
 	@Path("/login")
 	@Produces(MediaType.APPLICATION_JSON)
-	public User loginCheck(String json) {
+	public UserDTO loginCheck(String json) {
 
 		JSONObject jsonObj;
 		try {
 			jsonObj = new JSONObject(json);
 			String userName = jsonObj.getString("userName");
 			String password = jsonObj.getString("password");
-			int userTypeId = jsonObj.getInt("userTypeId");
-			return userDAO.loginCheck(userName, password, userTypeId);
+			return userManager.loginCheck(userName, password);
 		} catch (Exception e) {
 			// TODO: handle exception
 			return null;
