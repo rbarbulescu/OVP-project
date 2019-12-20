@@ -14,6 +14,7 @@ public class AppMain {
 	private static final String GET_USERS_ENDPOINT_URL = "http://localhost:8080/ovp.backend-0.0.1-SNAPSHOT/rest/users/";
 //	private static final String GET_USER_ENDPOINT_URL = "http://localhost:8080/ovp.backend-0.0.1-SNAPSHOT/rest/users/{userName}";
 	private static final String LOGIN_ENDPOINT_URL = "http://localhost:8080/ovp.backend-0.0.1-SNAPSHOT/rest/users/login";
+	private static final String CREATE_USER_ENDPOINT_URL = "http://localhost:8080/ovp.backend-0.0.1-SNAPSHOT/rest/users/";
 	
 	@SuppressWarnings("unchecked")
 	public static List<UserDTO> getUsers() {
@@ -107,7 +108,31 @@ public class AppMain {
 			e.printStackTrace();
 			return null;
 		}
+	}
+	
+	public static void addUser(String email, String userName, String password, int userTypeId) {
 		
+		try {
+			Client client = Client.create();
+			WebResource webResource = client.resource(CREATE_USER_ENDPOINT_URL);
+			
+			String input = "{\"email\":\"" + email + "\",\"userName\":\"" + userName + "\",\"password\":\"" +  password + "\",\"userTypeId\":" + userTypeId + "}";
+			
+			ClientResponse response = webResource.post(ClientResponse.class, input);			
+			
+			if (response.getStatus() != 200) {
+				
+				throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
+
+			} else {
+				
+				System.out.println("Well done!");
+
+			}			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
 		
 	}
 	

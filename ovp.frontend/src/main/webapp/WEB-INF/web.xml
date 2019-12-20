@@ -21,7 +21,6 @@
 		<servlet-name>UserServlet</servlet-name>
 		<url-pattern>/showUsers</url-pattern>
 	</servlet-mapping>
-	
 	<servlet>
 		<description></description>
 		<display-name>LoginServlet</display-name>
@@ -32,5 +31,14 @@
 		<servlet-name>LoginServlet</servlet-name>
 		<url-pattern>/logged</url-pattern>
 	</servlet-mapping>
-
+	<servlet>
+		<description></description>
+		<display-name>CreateUserServlet</display-name>
+		<servlet-name>CreateUserServlet</servlet-name>
+		<servlet-class>ovp.frontend.web.CreateUserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreateUserServlet</servlet-name>
+		<url-pattern>/addUser</url-pattern>
+	</servlet-mapping>
 </web-app>
