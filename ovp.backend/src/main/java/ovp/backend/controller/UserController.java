@@ -132,6 +132,7 @@ public class UserController {
 			jsonObj = new JSONObject(json);
 			String userName = jsonObj.getString("userName");
 			String password = jsonObj.getString("password");
+		
 			return userManager.loginCheck(userName, password);
 		} catch (Exception e) {
 			// TODO: handle exception

@@ -53,7 +53,7 @@
 						<h4 class="text-center font-weight-bold">Login Form</h4>
 						<div class="form-group wrapper">
 							<input type="text" class="form-control" id="inputUsername"
-								placeholder="Enter username" name="username">
+								placeholder="Enter username" name="userName">
 						</div>
 						<div class="form-group">
 							<input type="password" class="form-control" id="inputPassword"

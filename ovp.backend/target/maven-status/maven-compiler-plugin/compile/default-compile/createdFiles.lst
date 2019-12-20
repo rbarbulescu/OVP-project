@@ -1,8 +1,12 @@
 ovp\backend\persistence\model\UserType.class
+ovp\backend\persistence\model\User.class
+ovp\backend\business\UserTypeManager.class
+ovp\backend\persistence\daoimpl\UserDAOImpl.class
+ovp\backend\business\impl\UserManagerImpl.class
+ovp\backend\business\impl\UserTypeManagerImpl.class
+ovp\backend\controller\UserController.class
+ovp\backend\business\UserManager.class
 ovp\backend\commons\AppMain.class
 ovp\backend\persistence\dao\UserTypeDAO.class
 ovp\backend\persistence\daoimpl\UserTypeDAOImpl.class
-ovp\backend\persistence\model\User.class
 ovp\backend\persistence\dao\UserDAO.class
-ovp\backend\persistence\daoimpl\UserDAOImpl.class
-ovp\backend\controller\UserController.class

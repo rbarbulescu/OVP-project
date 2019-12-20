@@ -66,7 +66,7 @@ public class UserManagerImpl implements UserManager {
 		try {
 			User userObj = userDAO.loginCheck(userName, password);		
 			
-			if(userObj.getEmail() != null) {
+			if(userObj.getUserName() != null) {
 				UserDTO userDTO = new UserDTO();
 				userDTO.setEmail(userObj.getEmail());
 				userDTO.setUserName(userObj.getUserName());

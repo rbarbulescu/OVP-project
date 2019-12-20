@@ -11,7 +11,7 @@
 <body>
 	<a href="users">Click</a>
 
-	<table style="border:2px">
+	<table style="border: 2px">
 		<thead>
 			<tr>
 				<th>email</th>
@@ -20,7 +20,6 @@
 			</tr>
 		</thead>
 		<tbody>
-
 			<c:forEach var="user" items="${users}">
 				<tr>
 					<td><c:out value="${user.email}" /></td>

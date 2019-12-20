@@ -1,3 +1,4 @@
-ovp\common\resources\common\AppMain.class
 ovp\common\resources\dto\UserTypeDTO.class
 ovp\common\resources\dto\UserDTO.class
+ovp\common\resources\common\AppMain.class
+ovp\common\resources\dto\FullUserDTO.class
