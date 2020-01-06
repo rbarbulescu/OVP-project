@@ -116,11 +116,11 @@ public class AppMain {
 			Client client = Client.create();
 			WebResource webResource = client.resource(CREATE_USER_ENDPOINT_URL);
 			
-			String input = "{\"email\":\"" + email + "\",\"userName\":\"" + userName + "\",\"password\":\"" +  password + "\",\"userTypeId\":" + userTypeId + "}";
+			String input = "{\"email\":\"" + email + "\",\"userName\":\"" + userName + "\",\"password\":\"" +  password + "\",\"userTypeId\":\"" + userTypeId + "\"}";
 			
 			ClientResponse response = webResource.post(ClientResponse.class, input);			
 			
-			if (response.getStatus() != 200) {
+			if (response.getStatus() != 204) {
 				
 				throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
 

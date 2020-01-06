@@ -9,7 +9,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="users">Click</a>
 
 	<table style="border: 2px">
 		<thead>

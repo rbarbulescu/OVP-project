@@ -1,26 +1,17 @@
 package ovp.common.resources.common;
 
-import java.util.List;
-
-import com.google.gson.Gson;
-import com.sun.jersey.api.client.Client;
-import com.sun.jersey.api.client.ClientResponse;
-import com.sun.jersey.api.client.WebResource;
-
-import ovp.common.resources.dto.UserDTO;
 public class AppMain {
 	
  	//endpoints
+	/*
 	private static final String GET_USERS_ENDPOINT_URL = "http://localhost:8080/ovp.backend-0.0.1-SNAPSHOT/rest/users/";
 	private static final String GET_USERTYPES_ENDPOINT_URL = "http://localhost:8080/ovp.backend-0.0.1-SNAPSHOT/rest/users/types";
 	private static final String GET_USER_ENDPOINT_URL = "http://localhost:8080/ovp.backend-0.0.1-SNAPSHOT/rest/users/{userName}";
 	private static final String CREATE_USER_ENDPOINT_URL = "http://localhost:8080/ovp.backend-0.0.1-SNAPSHOT/rest/users/";
 	private static final String DELETE_USER_ENDPOINT_URL = "http://localhost:8080/ovp.backend-0.0.1-SNAPSHOT/rest/users/{userName}";
-	
+	*/
 	
 	public static void main(String[] args) {
-		
-		getUsers();
 		
 	}
 	
@@ -46,7 +37,7 @@ public class AppMain {
 			return null;
 		}
 	}
-	*/
+	
 	@SuppressWarnings("unchecked")
 	public static List<UserDTO> getUsers() {
 		

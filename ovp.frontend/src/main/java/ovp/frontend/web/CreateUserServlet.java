@@ -7,12 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ovp.common.resources.dto.FullUserDTO;
 import ovp.frontend.AppMain;
 
-/**
- * Servlet implementation class CreateUserServlet
- */
 public class CreateUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -39,7 +35,7 @@ public class CreateUserServlet extends HttpServlet {
 			
 			AppMain.addUser(email, userName, password, userTypeId);
 						
-			request.getRequestDispatcher("/login.jsp").forward(request, response);
+			response.sendRedirect("http://localhost:8090/ovp.frontend/login.jsp");  
 
 		} catch (Exception e) {
 			// TODO: handle exception
