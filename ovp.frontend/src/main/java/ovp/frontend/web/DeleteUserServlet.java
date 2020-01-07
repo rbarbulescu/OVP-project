@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import ovp.frontend.AppMain;
+
 /**
  * Servlet implementation class DeleteUserServlet
  */
@@ -25,7 +27,10 @@ public class DeleteUserServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		String userName = request.getParameter("userName");
+		AppMain.deleteUser(userName);
 		
+		response.sendRedirect("http://localhost:8090/ovp.frontend/login.jsp"); 
 	}
 
 

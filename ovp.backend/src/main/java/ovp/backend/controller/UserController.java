@@ -2,10 +2,8 @@ package ovp.backend.controller;
 
 import java.util.List;
 
-import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -98,7 +96,8 @@ public class UserController {
 		}
 	}
 
-	@PUT
+	@POST
+	@Path("/edit")
 	public void changePassword(String json) {
 
 		JSONObject jsonObj;
@@ -116,8 +115,8 @@ public class UserController {
 		}
 	}
 
-	@DELETE
-	@Path("/{userName}")
+	@GET
+	@Path("/delete/{userName}")
 	public void deleteUser(@PathParam("userName") String userName) {
 		userManager.deleteUser(userName);
 	}
