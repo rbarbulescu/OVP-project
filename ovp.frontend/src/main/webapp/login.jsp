@@ -26,7 +26,7 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<a class="navbar-brand" href="index.jsp">Home</a>
+		<a class="navbar-brand" href="index.html">Home</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarNav" aria-controls="navbarNav"
 			aria-expanded="false" aria-label="Toggle navigation">
@@ -36,7 +36,7 @@
 			<ul class="navbar-nav">
 				<li class="nav-item"><a class="nav-link" href="#">About</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Sign
+				<li class="nav-item"><a class="nav-link" href="addUser.jsp">Sign
 						up!</a>
 				<li class="nav-item"><a class="nav-link" href="login.jsp">Log
 						in</a></li>
