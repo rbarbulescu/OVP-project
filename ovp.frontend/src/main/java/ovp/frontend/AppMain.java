@@ -92,10 +92,13 @@ public class AppMain {
 			ClientResponse response = webResource.post(ClientResponse.class, input);
 
 			if (response.getStatus() != 200) {
-
-				user.setUserName("UserName or password is wrong!");
-
-				throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
+				
+				if(response.getStatus() != 204) {
+					throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
+				} else {
+					user.setUserName(null);
+					return user;
+				}
 
 			} else {
 				String jsonString = response.getEntity(String.class);

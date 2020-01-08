@@ -49,7 +49,7 @@
 			<div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-xs-12">
 				<div class="wrapper-card">
 					<img src="images/img_avatar2.png" class="center-image">
-					<form class="form-container" method="POST" action="logged">
+					<form class="form-container" method="POST" action="LoginServlet">
 						<h4 class="text-center font-weight-bold">Login Form</h4>
 						<div class="form-group wrapper">
 							<input type="text" class="form-control" id="inputUsername"

@@ -27,7 +27,7 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<a class="navbar-brand" href="index.html">Home</a>
+		<a class="navbar-brand" href="#">Home</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarNav" aria-controls="navbarNav"
 			aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +37,10 @@
 			<ul class="navbar-nav">
 				<li class="nav-item"><a class="nav-link" href="#">About</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-				<li class="nav-item"><a class="nav-link" href="updateUser.jsp"><c:out value="${user.userName}" /> Edit</a></li>
+				<li class="nav-item"><a class="nav-link" href="updateUser.jsp"><c:out
+							value="${user.userName}" /></a></li>
+				<li class="nav-item"><a class="nav-link" href="LogoutServlet">Log
+						out</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -45,6 +48,26 @@
 	<h1>
 		Hello
 		<c:out value="${user.userName}" />
+		<c:choose>
+			<c:when test="${user.userTypeId == 1.0}">
+				<p>Admin</p>
+			</c:when>
+			<c:when test="${user.userTypeId == 2.0}">
+				<p>Student</p>
+			</c:when>
+			<c:when test="${user.userTypeId == 3.0}">
+				<p>Checker</p>
+			</c:when>
+			<c:when test="${user.userTypeId == 4.0}">
+				<p>Visitor</p>
+			</c:when>
+			<c:when test="${user.userTypeId == 5.0}">
+				<p>Relative</p>
+			</c:when>
+			<c:otherwise>
+				<p>Unknown</p>
+			</c:otherwise>
+		</c:choose>
 	</h1>
 
 	<script type="text/javascript" src="js/bootsrap.js"></script>
