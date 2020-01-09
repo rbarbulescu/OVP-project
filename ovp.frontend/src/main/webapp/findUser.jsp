@@ -58,7 +58,7 @@
 
 	<h1>Insert a username: </h1>
 	<form action="showUsers" method="GET">
-		<input type="text" name="userName" value="Insert a username"> <br />
+		<input type="text" name="userName" placeholder="Insert a username"> <br />
 		<br /> <input type="submit" value="Submit">
 	</form>
 	

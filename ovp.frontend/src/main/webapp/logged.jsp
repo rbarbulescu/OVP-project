@@ -72,12 +72,6 @@
 			<c:when test="${user.userTypeId == 3.0}">
 				<p>Checker</p>
 			</c:when>
-			<c:when test="${user.userTypeId == 4.0}">
-				<p>Visitor</p>
-			</c:when>
-			<c:when test="${user.userTypeId == 5.0}">
-				<p>Relative</p>
-			</c:when>
 			<c:otherwise>
 				<p>Unknown</p>
 			</c:otherwise>

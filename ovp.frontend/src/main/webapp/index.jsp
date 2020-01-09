@@ -83,7 +83,11 @@
 
 		<c:when test="${user.userTypeId == 3.0}">
 			<p>
-				<a href="updateUser.jsp">Click</a> to edit a user
+				<a href="showUsers?userName=">Click</a> me if you want to see all
+				the users!
+			</p>
+			<p>
+				<a href="findUser.jsp">Click</a> to check a user
 			</p>
 		</c:when>
 
