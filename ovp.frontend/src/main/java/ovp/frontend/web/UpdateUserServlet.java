@@ -26,7 +26,7 @@ public class UpdateUserServlet extends HttpServlet {
 		
 		System.out.println(user.getUserName() + " was updated!");
 		
-		response.sendRedirect("http://localhost:8090/ovp.frontend/login.jsp"); 
+		response.sendRedirect("http://localhost:8090/ovp.frontend/logged.jsp"); 
 	}
 
 }

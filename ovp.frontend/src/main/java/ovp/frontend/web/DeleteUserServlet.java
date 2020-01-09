@@ -30,7 +30,7 @@ public class DeleteUserServlet extends HttpServlet {
 		String userName = request.getParameter("userName");
 		AppMain.deleteUser(userName);
 		
-		response.sendRedirect("http://localhost:8090/ovp.frontend/login.jsp"); 
+		response.sendRedirect("http://localhost:8090/ovp.frontend/index.jsp"); 
 	}
 
 

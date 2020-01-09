@@ -26,7 +26,7 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<a class="navbar-brand" href="index.html">Home</a>
+		<a class="navbar-brand" href="index.jsp">Home</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarNav" aria-controls="navbarNav"
 			aria-expanded="false" aria-label="Toggle navigation">
@@ -34,12 +34,26 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link" href="#">About</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-				<li class="nav-item"><a class="nav-link" href="addUser.jsp">Sign
-						up!</a>
-				<li class="nav-item"><a class="nav-link" href="login.jsp">Log
-						in</a></li>
+				<li class="nav-item"><a class="nav-link" href="about.jsp">About</a></li>
+				<li class="nav-item"><a class="nav-link" href="contact.jsp">Contact</a></li>
+				<li class="nav-item"><c:choose>
+						<c:when test="${logged == 1}">
+							<a class="nav-link" href="updateUser.jsp">Edit <c:out
+									value="${user.userName}" /></a>
+						</c:when>
+						<c:otherwise>
+							<a class="nav-link" href="addUser.jsp">Sign up!</a>
+						</c:otherwise>
+					</c:choose></li>
+				<li class="nav-item"><c:choose>
+						<c:when test="${logged == 1}">
+							<a class="nav-link" href="LogoutServlet">Log out</a>
+						</c:when>
+						<c:otherwise>
+							<a class="nav-link" href="login.jsp">Log in</a>
+						</c:otherwise>
+					</c:choose></li>
+
 			</ul>
 		</div>
 	</nav>
@@ -85,11 +99,15 @@
 								<p>Unknown</p>
 							</c:otherwise>
 						</c:choose></td>
+
+					<td><a href="deleteUser.jsp">Delete</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
 
-
+	<script type="text/javascript" src="js/bootsrap.js"></script>
+	<script type="text/javascript" src="js/bootsrap.bundle.js"></script>
+	<script type="text/javascript" src="js/bootsrap.bundle.js.map"></script>
 </body>
 </html>

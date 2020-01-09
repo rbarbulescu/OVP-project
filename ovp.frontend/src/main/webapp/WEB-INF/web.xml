@@ -32,7 +32,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>CreateUserServlet</servlet-name>
-    <url-pattern>/addedUser.jsp</url-pattern>
+    <url-pattern>/CreateUserServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>DeleteUserServlet</servlet-name>
@@ -40,15 +40,16 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>DeleteUserServlet</servlet-name>
-    <url-pattern>/deletedUser.jsp</url-pattern>
+    <url-pattern>/DeleteUserServlet</url-pattern>
   </servlet-mapping>
+ 
   <servlet>
     <servlet-name>UpdateUserServlet</servlet-name>
     <servlet-class>ovp.frontend.web.UpdateUserServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>UpdateUserServlet</servlet-name>
-    <url-pattern>/updatedUser.jsp</url-pattern>
+    <url-pattern>/UpdateUserServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>

@@ -1,9 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>	
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Index</title>
-
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -19,10 +20,11 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 	crossorigin="anonymous"></script>
+<title>About</title>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<a class="navbar-brand" href="index.html">Home</a>
+		<a class="navbar-brand" href="index.jsp">Home</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarNav" aria-controls="navbarNav"
 			aria-expanded="false" aria-label="Toggle navigation">
@@ -30,24 +32,31 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link" href="#">About</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-				<li class="nav-item"><a class="nav-link" href="addUser.jsp">Sign
-						up!</a>
-				<li class="nav-item"><a class="nav-link" href="login.jsp">Log
-						in</a></li>
+				<li class="nav-item"><a class="nav-link" href="about.jsp">About</a></li>
+				<li class="nav-item"><a class="nav-link" href="contact.jsp">Contact</a></li>
+				<li class="nav-item"><c:choose>
+						<c:when test="${logged == 1}">
+							<a class="nav-link" href="updateUser.jsp">Edit <c:out
+									value="${user.userName}" /></a>
+						</c:when>
+						<c:otherwise>
+							<a class="nav-link" href="addUser.jsp">Sign up!</a>
+						</c:otherwise>
+					</c:choose></li>
+				<li class="nav-item"><c:choose>
+						<c:when test="${logged == 1}">
+							<a class="nav-link" href="LogoutServlet">Log out</a>
+						</c:when>
+						<c:otherwise>
+							<a class="nav-link" href="login.jsp">Log in</a>
+						</c:otherwise>
+					</c:choose></li>
+
 			</ul>
 		</div>
 	</nav>
 	
-	
-	<p><a href="showUsers?userName=">Click</a> me if you want to see all the users!</p>
-	<p><a href="findUser.jsp">Click</a> to check a user</p>
-	<p><a href="login.jsp">Click</a> here to login</p>
-	<p><a href="addUser.jsp">Click</a> to add a new user</p>
-	<p><a href="updateUser.jsp">Click</a> to edit a user</p>
-	<p><a href="deleteUser.jsp">Delete</a> a user</p>
-	
+	<h1>Welcome to About page</h1>
 	
 	<script type="text/javascript" src="js/bootsrap.js"></script>
 	<script type="text/javascript" src="js/bootsrap.bundle.js"></script>
