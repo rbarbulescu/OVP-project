@@ -6,6 +6,7 @@
 <head>
 <title>Login Form</title>
 <link rel="stylesheet" type="text/css" href="css/loginStyle.css">
+
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -79,7 +80,7 @@
 								id="exampleCheck1"> <label class="form-check-label"
 								for="exampleCheck1">Remember me</label>
 						</div>
-						<button type="submit" class="btn btn-primary btn-block">Submit</button>
+						<button type="submit" class="btn btn-primary btn-block" id="btnCheck">Submit</button>
 					</form>
 				</div>
 			</div>

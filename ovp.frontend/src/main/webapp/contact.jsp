@@ -1,10 +1,42 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>	
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<style>
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+#map {
+	height: 80%;
+	width: 40%;
+	margin-left: 10%;
+	margin-right: auto;
+	float: left;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.informations {
+	display: block;
+	width: auto;
+	height: auto;
+	padding-top: 5110px;
+	border: 3px solid brown; 
+	float: right;
+	align: center;
+}
+
+.block {
+	display: inline-block;
+	padding: 5px;
+}
+</style>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -56,8 +88,30 @@
 		</div>
 	</nav>
 
-	<h1>Welcome to Contact page</h1>
-	
+	<h1>You can find our location on this page</h1>
+
+	<div id="map" class="block"></div>
+	<script>
+		var map;
+		function initMap() {
+			map = new google.maps.Map(document.getElementById('map'), {
+				center : {
+					lat : 45.784755844569425,
+					lng : 24.154240310797867
+				},
+				zoom : 15
+			});
+		}
+	</script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSzCrLe3ljLY5r-IND76zW57lsHi19DYg&callback=initMap"
+		async defer></script>
+
+	<div class="informations block">
+		<h3>Phone: +40 740 122 123</h3>
+		<h4>Address: Str. Calugareni nr. 40</h4>
+	</div>
+
 	<script type="text/javascript" src="js/bootsrap.js"></script>
 	<script type="text/javascript" src="js/bootsrap.bundle.js"></script>
 	<script type="text/javascript" src="js/bootsrap.bundle.js.map"></script>

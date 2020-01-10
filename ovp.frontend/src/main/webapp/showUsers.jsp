@@ -63,99 +63,115 @@
 			<p>
 				<a href="findUser.jsp">Find</a> user
 			</p>
-			<table class="table table-bordered">
-				<thead>
-					<tr>
-						<th scope="col">Email</th>
-						<th scope="col">Username</th>
-						<th scope="col">User Type</th>
-						<th scope="col">#</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<c:forEach var="user" items="${users}">
-							<tr>
-								<td><c:out value="${user.email}" /></td>
-								<td><c:out value="${user.userName}" /></td>
-								<td><c:choose>
-										<c:when test="${user.userTypeId == 1.0}">
-											<p>Admin</p>
-										</c:when>
+			<div class="container-fluid">
+				<div class="row justify-content-center">
+					<div class="col-xl-6 col-lg-8 col-md-10 col-sm-12 col-xs-12">
+						<div class="wrapper-card">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th scope="col">Email</th>
+										<th scope="col">Username</th>
+										<th scope="col">User Type</th>
+										<th scope="col">#</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<c:forEach var="user" items="${users}">
+											<tr>
+												<td><c:out value="${user.email}" /></td>
+												<td><c:out value="${user.userName}" /></td>
+												<td><c:choose>
+														<c:when test="${user.userTypeId == 1.0}">
+															<p>Admin</p>
+														</c:when>
 
-										<c:when test="${user.userTypeId == 2.0}">
-											<p>Student</p>
-										</c:when>
+														<c:when test="${user.userTypeId == 2.0}">
+															<p>Student</p>
+														</c:when>
 
-										<c:when test="${user.userTypeId == 3.0}">
-											<p>Checker</p>
-										</c:when>
+														<c:when test="${user.userTypeId == 3.0}">
+															<p>Checker</p>
+														</c:when>
 
-										<c:when test="${user.userTypeId == 4.0}">
-											<p>Visitor</p>
-										</c:when>
+														<c:when test="${user.userTypeId == 4.0}">
+															<p>Visitor</p>
+														</c:when>
 
-										<c:when test="${user.userTypeId == 5.0}">
-											<p>Relative</p>
-										</c:when>
+														<c:when test="${user.userTypeId == 5.0}">
+															<p>Relative</p>
+														</c:when>
 
-										<c:otherwise>
-											<p>Unknown</p>
-										</c:otherwise>
-									</c:choose></td>
+														<c:otherwise>
+															<p>Unknown</p>
+														</c:otherwise>
+													</c:choose></td>
 
-								<td><a href="deleteUser.jsp">Delete</a></td>
-							</tr>
-						</c:forEach>
-					</tr>
-				</tbody>
-			</table>
+												<td><a href="deleteUser.jsp">Delete</a></td>
+											</tr>
+										</c:forEach>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
 		</c:when>
 		<c:when test="${user.userTypeId == 3.0 }">
-			<table class="table table-bordered">
-				<thead>
-					<tr>
-						<th scope="col">Email</th>
-						<th scope="col">Username</th>
-						<th scope="col">User Type</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<c:forEach var="user" items="${users}">
-							<tr>
-								<td><c:out value="${user.email}" /></td>
-								<td><c:out value="${user.userName}" /></td>
-								<td><c:choose>
-										<c:when test="${user.userTypeId == 1.0}">
-											<p>Admin</p>
-										</c:when>
+			<div class="container-fluid">
+				<div class="row justify-content-center">
+					<div class="col-xl-6 col-lg-8 col-md-10 col-sm-12 col-xs-12">
+						<div class="wrapper-card">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th scope="col">Email</th>
+										<th scope="col">Username</th>
+										<th scope="col">User Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<c:forEach var="user" items="${users}">
+											<tr>
+												<td><c:out value="${user.email}" /></td>
+												<td><c:out value="${user.userName}" /></td>
+												<td><c:choose>
+														<c:when test="${user.userTypeId == 1.0}">
+															<p>Admin</p>
+														</c:when>
 
-										<c:when test="${user.userTypeId == 2.0}">
-											<p>Student</p>
-										</c:when>
+														<c:when test="${user.userTypeId == 2.0}">
+															<p>Student</p>
+														</c:when>
 
-										<c:when test="${user.userTypeId == 3.0}">
-											<p>Checker</p>
-										</c:when>
+														<c:when test="${user.userTypeId == 3.0}">
+															<p>Checker</p>
+														</c:when>
 
-										<c:when test="${user.userTypeId == 4.0}">
-											<p>Visitor</p>
-										</c:when>
+														<c:when test="${user.userTypeId == 4.0}">
+															<p>Visitor</p>
+														</c:when>
 
-										<c:when test="${user.userTypeId == 5.0}">
-											<p>Relative</p>
-										</c:when>
+														<c:when test="${user.userTypeId == 5.0}">
+															<p>Relative</p>
+														</c:when>
 
-										<c:otherwise>
-											<p>Unknown</p>
-										</c:otherwise>
-									</c:choose></td>
-							</tr>
-						</c:forEach>
-					</tr>
-				</tbody>
-			</table>
+														<c:otherwise>
+															<p>Unknown</p>
+														</c:otherwise>
+													</c:choose></td>
+											</tr>
+										</c:forEach>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
 		</c:when>
 		<c:otherwise>
 			<h1>Please login as admin to access the users.</h1>
