@@ -41,9 +41,14 @@ public class LoginServlet extends HttpServlet {
 			if (user.getUserName() != null) {
 				session.setAttribute("user", user);
 				session.setAttribute("logged", 1);
+				
 				request.getRequestDispatcher("/logged.jsp").forward(request, response);
 			} else {
-				session.setAttribute("logged", 0);
+				session.setAttribute("logged", 0);		
+				
+				String wrong = "Wrong username or password, try again";
+				request.setAttribute("wrong", wrong);
+				
 				response.sendRedirect("http://localhost:8090/ovp.frontend/login.jsp"); 
 			}
 

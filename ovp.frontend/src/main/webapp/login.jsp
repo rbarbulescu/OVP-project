@@ -86,6 +86,7 @@
 			</div>
 		</div>
 	</div>
+
 	<script type="text/javascript" src="js/bootsrap.js"></script>
 	<script type="text/javascript" src="js/bootsrap.bundle.js"></script>
 	<script type="text/javascript" src="js/bootsrap.bundle.js.map"></script>
