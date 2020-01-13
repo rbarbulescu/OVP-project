@@ -54,6 +54,35 @@
 			</ul>
 		</div>
 	</nav>
+	
+	<div class="wpb_text_column wpb_content_element">
+		<div class="wpb_wrapper">
+			<h1 style="text-align: center;">The fastest way to verify
+				student's identity.</h1>
+			<p class="lead" style="text-align: center;">The identity
+				verification platform that users love. Optimized for conversion and
+				security.</p>
+		</div>
+	</div>
+
+	<div class="wpb_column vc_column_container col-sm-5">
+		<div class="vc_column-inner">
+			<div class="wpb_wrapper">
+				<div class="wpb_single_image wpb_content_element vc_align_center">
+					<figure class="wpb_wrapper vc_figure">
+						<div class="vc_single_image-wrapper   vc_box_border_grey">
+							<img width="667" height="700"
+								src="https://www.idnow.io/wp-content/uploads/front_side_mockup_6.png"
+								class="vc_single_image-img attachment-large"
+								alt="Homepage 2019 EN 1"
+								srcset="https://www.idnow.io/wp-content/uploads/front_side_mockup_6.png 667w, https://www.idnow.io/wp-content/uploads/front_side_mockup_6-286x300.png 286w"
+								sizes="(max-width: 667px) 100vw, 667px">
+						</div>
+					</figure>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<c:choose>
 		<c:when test="${user.userTypeId == 1.0}">
@@ -101,36 +130,6 @@
 			</p>
 		</c:otherwise>
 	</c:choose>
-
-	<div class="wpb_text_column wpb_content_element">
-		<div class="wpb_wrapper">
-			<h1 style="text-align: center;">The fastest way to verify
-				student's identity.</h1>
-			<p class="lead" style="text-align: center;">The identity
-				verification platform that users love. Optimized for conversion and
-				security.</p>
-		</div>
-	</div>
-
-	<div class="wpb_column vc_column_container col-sm-5">
-		<div class="vc_column-inner">
-			<div class="wpb_wrapper">
-				<div class="wpb_single_image wpb_content_element vc_align_center">
-					<figure class="wpb_wrapper vc_figure">
-						<div class="vc_single_image-wrapper   vc_box_border_grey">
-							<img width="667" height="700"
-								src="https://www.idnow.io/wp-content/uploads/front_side_mockup_6.png"
-								class="vc_single_image-img attachment-large"
-								alt="Homepage 2019 EN 1"
-								srcset="https://www.idnow.io/wp-content/uploads/front_side_mockup_6.png 667w, https://www.idnow.io/wp-content/uploads/front_side_mockup_6-286x300.png 286w"
-								sizes="(max-width: 667px) 100vw, 667px">
-						</div>
-					</figure>
-				</div>
-			</div>
-		</div>
-	</div>
-
 
 	<script type="text/javascript" src="js/bootsrap.js"></script>
 	<script type="text/javascript" src="js/bootsrap.bundle.js"></script>

@@ -88,19 +88,22 @@ html, body {
 		</div>
 	</nav>
 
-	<h1>You can find our location on this page</h1>
+	<h1>You can find our contact informations on this page</h1>
 
 	<div id="map" class="block"></div>
 	<script>
 		var map;
 		function initMap() {
+			var myLatLng = {lat: 45.784755844569425, lng: 24.154240310797867};
 			map = new google.maps.Map(document.getElementById('map'), {
-				center : {
-					lat : 45.784755844569425,
-					lng : 24.154240310797867
-				},
+				center : myLatLng,
 				zoom : 15
 			});
+			var marker = new google.maps.Marker({
+			    position: myLatLng,
+			    map: map,
+			    title: 'Here!'
+			  });
 		}
 	</script>
 	<script
